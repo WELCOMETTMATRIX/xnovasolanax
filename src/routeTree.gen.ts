@@ -14,6 +14,7 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as AiRouteImport } from './routes/ai'
 import { Route as ChartRouteImport } from './routes/chart'
 import { Route as CommunityRouteImport } from './routes/community'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as RoadmapRouteImport } from './routes/roadmap'
 
 const IndexRoute = IndexRouteImport.update({
@@ -41,6 +42,11 @@ const CommunityRoute = CommunityRouteImport.update({
   path: '/community',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const RoadmapRoute = RoadmapRouteImport.update({
   id: '/roadmap',
   path: '/roadmap',
@@ -53,6 +59,7 @@ export interface FileRoutesByFullPath {
   '/ai': typeof AiRoute
   '/chart': typeof ChartRoute
   '/community': typeof CommunityRoute
+  '/privacy': typeof PrivacyRoute
   '/roadmap': typeof RoadmapRoute
 }
 export interface FileRoutesByTo {
@@ -61,6 +68,7 @@ export interface FileRoutesByTo {
   '/ai': typeof AiRoute
   '/chart': typeof ChartRoute
   '/community': typeof CommunityRoute
+  '/privacy': typeof PrivacyRoute
   '/roadmap': typeof RoadmapRoute
 }
 export interface FileRoutesById {
@@ -70,14 +78,24 @@ export interface FileRoutesById {
   '/ai': typeof AiRoute
   '/chart': typeof ChartRoute
   '/community': typeof CommunityRoute
+  '/privacy': typeof PrivacyRoute
   '/roadmap': typeof RoadmapRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/ai' | '/chart' | '/community' | '/roadmap'
+  fullPaths:
+    '/' | '/about' | '/ai' | '/chart' | '/community' | '/privacy' | '/roadmap'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/ai' | '/chart' | '/community' | '/roadmap'
-  id: '__root__' | '/' | '/about' | '/ai' | '/chart' | '/community' | '/roadmap'
+  to: '/' | '/about' | '/ai' | '/chart' | '/community' | '/privacy' | '/roadmap'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/ai'
+    | '/chart'
+    | '/community'
+    | '/privacy'
+    | '/roadmap'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -86,6 +104,7 @@ export interface RootRouteChildren {
   AiRoute: typeof AiRoute
   ChartRoute: typeof ChartRoute
   CommunityRoute: typeof CommunityRoute
+  PrivacyRoute: typeof PrivacyRoute
   RoadmapRoute: typeof RoadmapRoute
 }
 
@@ -126,6 +145,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CommunityRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/roadmap': {
       id: '/roadmap'
       path: '/roadmap'
@@ -142,6 +168,7 @@ const rootRouteChildren: RootRouteChildren = {
   AiRoute: AiRoute,
   ChartRoute: ChartRoute,
   CommunityRoute: CommunityRoute,
+  PrivacyRoute: PrivacyRoute,
   RoadmapRoute: RoadmapRoute,
 }
 export const routeTree = rootRouteImport
