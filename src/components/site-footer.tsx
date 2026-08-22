@@ -24,8 +24,12 @@ export function SiteFooter() {
           <div className="flex flex-col gap-2 text-sm text-muted-foreground">
             <Link to="/" className="hover:text-foreground">Home</Link>
             <Link to="/chart" className="hover:text-foreground">Live chart</Link>
+            <Link to="/ai" className="hover:text-foreground">NOVA AI</Link>
+            <Link to="/community" className="hover:text-foreground">Community chat</Link>
             <Link to="/roadmap" className="hover:text-foreground">Roadmap</Link>
             <Link to="/about" className="hover:text-foreground">About us</Link>
+            <Link to="/privacy" className="hover:text-foreground">Privacy policy</Link>
+            <Link to="/terms" className="hover:text-foreground">Terms &amp; risk</Link>
           </div>
         </div>
 

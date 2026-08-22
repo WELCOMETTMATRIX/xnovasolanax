@@ -8,6 +8,8 @@ import { PUMP_FUN_URL } from "@/lib/token";
 const links = [
   { to: "/", label: "Home" },
   { to: "/chart", label: "Chart" },
+  { to: "/ai", label: "NOVA AI" },
+  { to: "/community", label: "Chat" },
   { to: "/roadmap", label: "Roadmap" },
   { to: "/about", label: "About" },
 ] as const;
