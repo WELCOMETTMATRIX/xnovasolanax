@@ -214,6 +214,42 @@ function Home() {
         </div>
       </section>
 
+      <MissionSection />
+      <TrustedBrands />
+
+      {/* AI + community */}
+      <section className="mx-auto max-w-6xl px-4 py-16">
+        <div className="grid gap-5 md:grid-cols-2">
+          <div className="glass-card flex flex-col rounded-4xl p-8">
+            <div className="mb-4 inline-flex w-fit rounded-2xl bg-primary/20 p-3 text-accent">
+              <Bot className="h-6 w-6" />
+            </div>
+            <h2 className="font-display text-3xl">NOVA AI</h2>
+            <p className="mt-3 flex-1 text-muted-foreground">
+              Our own AI system answers every XNOVA question instantly — how to buy, how to verify
+              the real contract, how to read the chart. Zero dumb questions, 24/7.
+            </p>
+            <Button asChild variant="hero" className="mt-6 w-fit">
+              <Link to="/ai">Ask NOVA AI</Link>
+            </Button>
+          </div>
+
+          <div className="glass-card flex flex-col rounded-4xl p-8">
+            <div className="mb-4 inline-flex w-fit rounded-2xl bg-accent/20 p-3 text-accent">
+              <MessagesSquare className="h-6 w-6" />
+            </div>
+            <h2 className="font-display text-3xl">Community chat</h2>
+            <p className="mt-3 flex-1 text-muted-foreground">
+              A live, public room for the family. Pick a nickname and talk to holders in real time —
+              no signup, no invite link, no gatekeeping.
+            </p>
+            <Button asChild variant="neon" className="mt-6 w-fit">
+              <Link to="/community">Enter the chat</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA */}
       <section className="mx-auto max-w-6xl px-4 py-16">
         <div className="glass-card relative overflow-hidden rounded-4xl px-6 py-14 text-center">
