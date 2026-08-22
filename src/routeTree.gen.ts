@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as AiRouteImport } from './routes/ai'
 import { Route as ChartRouteImport } from './routes/chart'
+import { Route as CommunityRouteImport } from './routes/community'
 import { Route as RoadmapRouteImport } from './routes/roadmap'
 
 const IndexRoute = IndexRouteImport.update({
@@ -35,6 +36,11 @@ const ChartRoute = ChartRouteImport.update({
   path: '/chart',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CommunityRoute = CommunityRouteImport.update({
+  id: '/community',
+  path: '/community',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const RoadmapRoute = RoadmapRouteImport.update({
   id: '/roadmap',
   path: '/roadmap',
@@ -46,6 +52,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/ai': typeof AiRoute
   '/chart': typeof ChartRoute
+  '/community': typeof CommunityRoute
   '/roadmap': typeof RoadmapRoute
 }
 export interface FileRoutesByTo {
@@ -53,6 +60,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/ai': typeof AiRoute
   '/chart': typeof ChartRoute
+  '/community': typeof CommunityRoute
   '/roadmap': typeof RoadmapRoute
 }
 export interface FileRoutesById {
@@ -61,14 +69,15 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/ai': typeof AiRoute
   '/chart': typeof ChartRoute
+  '/community': typeof CommunityRoute
   '/roadmap': typeof RoadmapRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/ai' | '/chart' | '/roadmap'
+  fullPaths: '/' | '/about' | '/ai' | '/chart' | '/community' | '/roadmap'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/ai' | '/chart' | '/roadmap'
-  id: '__root__' | '/' | '/about' | '/ai' | '/chart' | '/roadmap'
+  to: '/' | '/about' | '/ai' | '/chart' | '/community' | '/roadmap'
+  id: '__root__' | '/' | '/about' | '/ai' | '/chart' | '/community' | '/roadmap'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -76,6 +85,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   AiRoute: typeof AiRoute
   ChartRoute: typeof ChartRoute
+  CommunityRoute: typeof CommunityRoute
   RoadmapRoute: typeof RoadmapRoute
 }
 
@@ -109,6 +119,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ChartRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/community': {
+      id: '/community'
+      path: '/community'
+      fullPath: '/community'
+      preLoaderRoute: typeof CommunityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/roadmap': {
       id: '/roadmap'
       path: '/roadmap'
@@ -124,6 +141,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   AiRoute: AiRoute,
   ChartRoute: ChartRoute,
+  CommunityRoute: CommunityRoute,
   RoadmapRoute: RoadmapRoute,
 }
 export const routeTree = rootRouteImport
