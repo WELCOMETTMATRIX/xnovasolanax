@@ -10,9 +10,13 @@ import {
   ArrowRightLeft,
   LineChart,
   PartyPopper,
+  Bot,
+  MessagesSquare,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ContractBar } from "@/components/contract-bar";
+import { MissionSection } from "@/components/mission";
+import { TrustedBrands } from "@/components/trusted-brands";
 import mascot from "@/assets/mascot.png";
 import { DEXSCREENER_URL, PUMP_FUN_URL } from "@/lib/token";
 
