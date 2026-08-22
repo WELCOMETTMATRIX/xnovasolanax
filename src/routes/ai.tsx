@@ -57,7 +57,7 @@ function AiPage() {
   const ask = useServerFn(askNova);
 
   const mutation = useMutation({
-    mutationFn: (next: Msg[]) => ask({ data: { messages: next.filter((m) => m.role !== "assistant" || next.indexOf(m) > 0) } }),
+    mutationFn: (next: Msg[]) => ask({ data: { messages: next.slice(-20) } }),
     onSuccess: (res) => setMessages((m) => [...m, { role: "assistant", content: res.reply }]),
     onError: () =>
       setMessages((m) => [
