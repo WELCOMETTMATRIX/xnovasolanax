@@ -275,6 +275,323 @@ https://lovable.dev/projects/02778207-ca7f-44e0-9911-3b79f195dbe6
 > **XNOVA — Built on Solana. Built for the community.**
 
 
+
+# XNOVA — Vercel Deployment
+
+> **XNOVA — Cute. Chaotic. Unstoppable.**
+
+This document describes the **XNOVA web application deployed on Vercel**.
+
+---
+
+## Vercel Deployment
+
+| Property            | Value                            |
+| ------------------- | -------------------------------- |
+| **Platform**        | Vercel                           |
+| **Production URL**  | https://xnovasolanax.vercel.app/ |
+| **Project**         | XNOVA                            |
+| **Network**         | Solana                           |
+| **Token**           | XNOVA                            |
+| **Deployment Type** | Production Web Application       |
+| **Status**          | Live                             |
+| **Year**            | 2026                             |
+
+### Live Application
+
+**XNOVA Vercel App:**
+
+https://xnovasolanax.vercel.app/
+
+---
+
+# About XNOVA
+
+XNOVA is a community-powered meme token living on Solana.
+
+The website presents XNOVA as a fast, low-cost, community-focused project built around Solana culture, memes, community participation, and future ecosystem development.
+
+| Feature               | Description                       |
+| --------------------- | --------------------------------- |
+| ⚡ **Speed**           | Powered by Solana                 |
+| 💰 **Low Fees**       | Low-cost blockchain transactions  |
+| 🤝 **Community**      | Community-powered project         |
+| 🔐 **Transparency**   | Public on-chain activity          |
+| 🎨 **Culture**        | Memes, art, and community content |
+| 🤖 **NOVA AI**        | XNOVA-focused AI assistant        |
+| 💬 **Community Chat** | Public live community room        |
+
+---
+
+# Token Information
+
+| Property            | Value                                          |
+| ------------------- | ---------------------------------------------- |
+| **Name**            | XNOVA                                          |
+| **Ticker**          | XNOVA                                          |
+| **Blockchain**      | Solana                                         |
+| **Contract / Mint** | `9RwukCBfqoXb4XaqDvchKs8LhSmbbdcVik1S9h47pump` |
+| **Launch Platform** | Pump.fun                                       |
+| **Buy / Sell Tax**  | 0%                                             |
+| **Team Allocation** | 0%                                             |
+| **Liquidity**       | Pump.fun bonding curve                         |
+| **Supply**          | Fixed at launch                                |
+| **Mint Authority**  | Renounced at graduation                        |
+
+The values above reflect the information currently displayed on the live XNOVA website.
+
+---
+
+# Vercel Features
+
+The XNOVA application uses Vercel as its web deployment platform.
+
+| Capability            | XNOVA               |
+| --------------------- | ------------------- |
+| Production deployment | ✅                   |
+| HTTPS                 | ✅                   |
+| Public web URL        | ✅                   |
+| Git-based deployment  | ✅                   |
+| Preview deployments   | Supported by Vercel |
+| Environment variables | Supported by Vercel |
+| Custom domains        | Supported by Vercel |
+| Serverless functions  | Supported by Vercel |
+
+Vercel supports separate Development, Preview, and Production environments, as well as project-scoped environment variables and custom domains.
+
+---
+
+# XNOVA Website Sections
+
+| Section               | Purpose                          |
+| --------------------- | -------------------------------- |
+| 🏠 **Home**           | Main XNOVA landing page          |
+| 📊 **Live Chart**     | Token market/chart information   |
+| 🤖 **NOVA AI**        | AI assistant for XNOVA questions |
+| 💬 **Community Chat** | Public community discussion      |
+| 🗺️ **Roadmap**       | Project development direction    |
+| ℹ️ **About Us**       | Project information              |
+| 🔐 **Privacy Policy** | Privacy information              |
+| ⚠️ **Terms & Risk**   | Risk and legal information       |
+
+The live website currently exposes these sections through its navigation.
+
+---
+
+# Integrated Solana Ecosystem
+
+The XNOVA website references compatibility with several existing Solana ecosystem tools.
+
+| Platform        | Purpose                   |
+| --------------- | ------------------------- |
+| **Solana**      | Blockchain                |
+| **Pump.fun**    | Token launch platform     |
+| **Jupiter**     | Token aggregation / swaps |
+| **Raydium**     | Decentralized exchange    |
+| **DexScreener** | Charts and market data    |
+| **Phantom**     | Solana wallet             |
+| **Solflare**    | Solana wallet             |
+| **Solscan**     | Blockchain explorer       |
+
+The website notes that these listings indicate compatibility and do not necessarily represent endorsement or partnership.
+
+---
+
+# NOVA AI
+
+XNOVA includes an AI-focused feature called **NOVA AI**.
+
+| Feature          | Description                                                  |
+| ---------------- | ------------------------------------------------------------ |
+| **Name**         | NOVA AI                                                      |
+| **Purpose**      | Answer XNOVA-related questions                               |
+| **Availability** | Website feature                                              |
+| **Topics**       | Buying, contract verification, charts, and XNOVA information |
+| **Access**       | Through the XNOVA website                                    |
+
+The live website describes NOVA AI as an always-available assistant for XNOVA questions.
+
+---
+
+# Community Chat
+
+The XNOVA website also provides a public community chat.
+
+| Property    | Description               |
+| ----------- | ------------------------- |
+| **Type**    | Public live chat          |
+| **Signup**  | No signup advertised      |
+| **Purpose** | Community discussion      |
+| **Access**  | Through the XNOVA website |
+
+The website describes the chat as a public room where users can choose a nickname and communicate with other community members.
+
+---
+
+# Deployment Architecture
+
+```text
+                 ┌─────────────────────┐
+                 │       GitHub        │
+                 │   XNOVA Repository  │
+                 └──────────┬──────────┘
+                            │
+                            │ Git Deployment
+                            ▼
+                 ┌─────────────────────┐
+                 │       Vercel        │
+                 │  Build & Deployment │
+                 └──────────┬──────────┘
+                            │
+                            │ Production
+                            ▼
+          ┌─────────────────────────────────┐
+          │  xnovasolanax.vercel.app        │
+          │                                 │
+          │       XNOVA Web Application     │
+          └───────────────┬─────────────────┘
+                          │
+          ┌───────────────┼────────────────┐
+          ▼               ▼                ▼
+      Solana          Pump.fun        Market Data
+      Ecosystem       Launch          & Charts
+```
+
+---
+
+# Environment Variables
+
+If the XNOVA application requires private API keys, database credentials, webhook secrets, or other sensitive configuration, they should be stored in **Vercel Environment Variables rather than committed to the repository**.
+
+| Environment     | Purpose                            |
+| --------------- | ---------------------------------- |
+| **Development** | Local development                  |
+| **Preview**     | Testing branches and pull requests |
+| **Production**  | Live XNOVA deployment              |
+
+Vercel allows environment variables to be scoped to these environments. After changing environment variables, the project should be redeployed for the changes to take effect.
+
+### Security Rule
+
+```text
+DO NOT commit:
+
+Private API keys
+Database passwords
+Wallet private keys
+Seed phrases
+Webhook secrets
+Authentication secrets
+```
+
+Use Vercel's environment-variable system for server-side secrets instead.
+
+---
+
+# Deployment Workflow
+
+| Step | Action                                  |
+| ---: | --------------------------------------- |
+|    1 | Develop XNOVA application               |
+|    2 | Commit changes to GitHub                |
+|    3 | Push changes                            |
+|    4 | Vercel detects the update               |
+|    5 | Vercel builds the application           |
+|    6 | Deployment is created                   |
+|    7 | Production deployment becomes available |
+|    8 | Verify `xnovasolanax.vercel.app`        |
+
+Vercel supports Git-based deployments and creates separate preview deployments for non-production branches.
+
+---
+
+# Production URL
+
+| Type                  | URL                              |
+| --------------------- | -------------------------------- |
+| **Vercel Production** | https://xnovasolanax.vercel.app/ |
+
+### Status
+
+**🟢 LIVE**
+
+---
+
+# Repository & Development
+
+The Vercel deployment should remain connected to the project's source repository.
+
+| Component         | Role                |
+| ----------------- | ------------------- |
+| **GitHub**        | Source code         |
+| **Vercel**        | Deployment          |
+| **Solana**        | Blockchain          |
+| **XNOVA**         | Token               |
+| **Pump.fun**      | Launch platform     |
+| **XNOVA Website** | Community interface |
+
+---
+
+# Security
+
+The XNOVA website provides users with access to token information and ecosystem services.
+
+Users should always:
+
+| Security Practice     | Action                                    |
+| --------------------- | ----------------------------------------- |
+| 🔎 Verify Contract    | Confirm the official XNOVA mint           |
+| 🔐 Protect Wallet     | Never share seed phrases                  |
+| 🚫 Avoid Fake Sites   | Use the official Vercel URL               |
+| ✍️ Check Transactions | Review wallet transactions before signing |
+| 🛡️ Protect Secrets   | Never publish private API keys            |
+| 🔗 Verify Links       | Use official XNOVA channels               |
+
+---
+
+# Disclaimer
+
+XNOVA is a meme token and community project.
+
+The website itself states that XNOVA has **no intrinsic value or expectation of financial return** and that cryptocurrency involves risk. Users should conduct their own research before interacting with the token or related services.
+
+This README is documentation for the Vercel deployment and does not constitute financial, investment, legal, or tax advice.
+
+---
+
+# License
+
+| Property     | Value  |
+| ------------ | ------ |
+| **Project**  | XNOVA  |
+| **Year**     | 2026   |
+| **License**  | MIT    |
+| **Platform** | Vercel |
+
+See the project's `LICENSE` file for the applicable license terms.
+
+---
+
+# XNOVA Vercel
+
+|                   |                                  |
+| ----------------- | -------------------------------- |
+| 🚀 **Deployment** | Vercel                           |
+| 🌐 **Website**    | https://xnovasolanax.vercel.app/ |
+| ⛓️ **Blockchain** | Solana                           |
+| 🪙 **Token**      | XNOVA                            |
+| 💬 **Community**  | XNOVA Community                  |
+| 🤖 **AI**         | NOVA AI                          |
+| 📊 **Charts**     | Live market data                 |
+| 🛡️ **Status**    | **LIVE**                         |
+
+> **XNOVA — Cute. Chaotic. Unstoppable.**
+
+
+
+
+
+
 Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
 
 ```sh
