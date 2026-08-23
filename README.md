@@ -126,10 +126,12 @@ Official Mint Address: 9RwukCBfqoXb4XaqDvchKs8LhSmbbdcVik1S9h47pump
 
 License
 
+XNOVA is open source under the MIT License. See the LICENSE file.
+
 Copyright © 2026 XNOVA.
 
-The licensing terms for the XNOVA software and documentation will be published as the project develops.
 This project was built with [Lovable](https://lovable.dev).
+
 
 **Live app**: https://xnovasolanax.lovable.app
 
@@ -151,3 +153,5 @@ cd <repository-name>
 npm i
 npm run dev
 ```
+
+Then copy `.env.example` to `.env` and fill in your own backend (Supabase) project values. The real `.env` is git-ignored so no keys ship with this repository.
