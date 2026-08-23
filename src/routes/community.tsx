@@ -41,6 +41,7 @@ function CommunityPage() {
   const [nickname, setNickname] = useState("");
   const [body, setBody] = useState("");
   const [sending, setSending] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const listRef = useRef<HTMLDivElement>(null);
 
@@ -51,14 +52,29 @@ function CommunityPage() {
   useEffect(() => {
     let active = true;
 
+    setLoading(true);
     supabase
       .from("chat_messages")
       .select("id, nickname, body, created_at")
       .order("created_at", { ascending: false })
       .limit(100)
-      .then(({ data }) => {
-        if (active && data) setMessages([...data].reverse() as ChatMessage[]);
+      .then(({ data, error: loadError }) => {
+        if (!active) return;
+        if (loadError) {
+          console.error("[v0] Community messages failed to load:", loadError);
+          setError("Community chat is temporarily unavailable. Please refresh and try again.");
+        } else if (data) {
+          setMessages([...data].reverse() as ChatMessage[]);
+        }
+        setLoading(false);
       });
+
+    const handleSubscription = (status: string) => {
+      if (status === "CHANNEL_ERROR" || status === "TIMED_OUT") {
+        console.error("[v0] Community realtime subscription failed:", status);
+        if (active) setError("Live updates are unavailable right now. You can still refresh to see messages.");
+      }
+    };
 
     const channel = supabase
       .channel("xnova-community-chat")
@@ -72,7 +88,7 @@ function CommunityPage() {
           );
         },
       )
-      .subscribe();
+      .subscribe(handleSubscription);
 
     return () => {
       active = false;
@@ -132,8 +148,10 @@ function CommunityPage() {
           <span className="text-xs text-muted-foreground">{messages.length} recent messages</span>
         </div>
 
-        <div ref={listRef} className="h-[28rem] space-y-4 overflow-y-auto px-6 py-6">
-          {messages.length === 0 ? (
+        <div ref={listRef} className="h-[28rem] space-y-4 overflow-y-auto px-6 py-6" aria-live="polite">
+          {loading ? (
+            <p className="pt-16 text-center text-sm text-muted-foreground">Loading community messages…</p>
+          ) : messages.length === 0 ? (
             <p className="pt-16 text-center text-sm text-muted-foreground">
               Nobody has spoken yet. Be the first XNOVA voice.
             </p>
