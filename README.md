@@ -153,3 +153,5 @@ cd <repository-name>
 npm i
 npm run dev
 ```
+
+Then copy `.env.example` to `.env` and fill in your own backend (Supabase) project values. The real `.env` is git-ignored so no keys ship with this repository.
