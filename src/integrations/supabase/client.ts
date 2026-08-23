@@ -76,11 +76,30 @@ function sharedPreviewStorage() {
 }
 
 
+function isUsableEnvValue(value: unknown): value is string {
+  return typeof value === 'string' && value.length > 0 && !/^process\.env\./.test(value);
+}
+
+function firstUsableEnvValue(...values: unknown[]): string | undefined {
+  return values.find(isUsableEnvValue);
+}
+
 function createSupabaseClient() {
-  // Use import.meta.env for client-side (Vite build-time replacement)
-  // Fall back to process.env for SSR (server-side rendering)
-  const SUPABASE_URL = import.meta.env['VITE_SUPABASE_URL'] || process.env['SUPABASE_URL'];
-  const SUPABASE_PUBLISHABLE_KEY = import.meta.env['VITE_SUPABASE_PUBLISHABLE_KEY'] || process.env['SUPABASE_PUBLISHABLE_KEY'];
+  // Lovable can expose both VITE_* and server-style variables. Ignore literal
+  // `process.env.*` placeholders so a malformed build-time value cannot win
+  // over the valid project variables supplied by Vercel/Lovable.
+  const SUPABASE_URL = firstUsableEnvValue(
+    import.meta.env['VITE_SUPABASE_URL'],
+    process.env['VITE_SUPABASE_URL'],
+    process.env['SUPABASE_URL'],
+    process.env['SUPABASE_URL_2'],
+  );
+  const SUPABASE_PUBLISHABLE_KEY = firstUsableEnvValue(
+    import.meta.env['VITE_SUPABASE_PUBLISHABLE_KEY'],
+    process.env['VITE_SUPABASE_PUBLISHABLE_KEY'],
+    process.env['SUPABASE_PUBLISHABLE_KEY'],
+    process.env['SUPABASE_PUBLISHABLE_KEY_2'],
+  );
 
   if (!SUPABASE_URL || !SUPABASE_PUBLISHABLE_KEY) {
     const missing = [
