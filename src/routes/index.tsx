@@ -23,17 +23,17 @@ import { DEXSCREENER_URL, PUMP_FUN_URL } from "@/lib/token";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "XNOVA — The Meme Token Powering Solana Culture" },
+      { title: "XNOVA — Professional Solana Community Token" },
       {
         name: "description",
         content:
-          "XNOVA is a community-powered Solana meme token. Buy on Pump.fun, track the live chart and join the family. Cute. Chaotic. XNOVA.",
+          "XNOVA is a community-powered Solana token with official mint details, live chart access, and clear risk guidance.",
       },
-      { property: "og:title", content: "XNOVA — The Meme Token Powering Solana Culture" },
+      { property: "og:title", content: "XNOVA — Professional Solana Community Token" },
       {
         property: "og:description",
         content:
-          "Community-powered Solana meme token. Live chart, roadmap and one-click buy on Pump.fun.",
+          "Community-powered Solana token with live chart access, roadmap details, and official mint verification.",
       },
     ],
   }),
@@ -41,19 +41,59 @@ export const Route = createFileRoute("/")({
 });
 
 const perks = [
-  { icon: Zap, title: "Fast like Solana", text: "Sub-second confirmations. Your degen clicks land instantly." },
-  { icon: Coins, title: "Fees so low it's funny", text: "Trade all day for fractions of a cent in network fees." },
-  { icon: Users, title: "Community powered", text: "No suits, no gatekeepers. Holders steer the ship." },
-  { icon: ShieldCheck, title: "Transparent by default", text: "Fair launch on Pump.fun. Every wallet is on-chain and public." },
-  { icon: Sparkles, title: "Built for the culture", text: "Memes, art, raids and a mascot people actually want to share." },
-  { icon: Rocket, title: "Big potential energy", text: "Early, loud and only getting louder as the family grows." },
+  {
+    icon: Zap,
+    title: "Fast Solana settlement",
+    text: "Designed around Solana's fast confirmation times and low-friction user experience.",
+  },
+  {
+    icon: Coins,
+    title: "Low network costs",
+    text: "Solana network fees keep basic interactions accessible for community members.",
+  },
+  {
+    icon: Users,
+    title: "Community powered",
+    text: "Community members help shape awareness, feedback, and ecosystem direction.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Transparent by default",
+    text: "Official mint details are published clearly, and on-chain activity can be reviewed publicly.",
+  },
+  {
+    icon: Sparkles,
+    title: "Built for participation",
+    text: "Brand assets, community content, and project updates are designed to be easy to share.",
+  },
+  {
+    icon: Rocket,
+    title: "Forward-looking roadmap",
+    text: "The roadmap highlights future utilities, integrations, and community programs without guarantees.",
+  },
 ];
 
 const steps = [
-  { icon: Wallet, title: "Get a wallet", text: "Install Phantom or Solflare and fund it with SOL." },
-  { icon: ArrowRightLeft, title: "Open Pump.fun", text: "Hit the buy button — the XNOVA page opens with the contract loaded." },
-  { icon: LineChart, title: "Swap for XNOVA", text: "Enter your amount, confirm, and the tokens land in seconds." },
-  { icon: PartyPopper, title: "Join the family", text: "Hold, meme, and help XNOVA go supernova." },
+  {
+    icon: Wallet,
+    title: "Get a wallet",
+    text: "Install Phantom or Solflare and fund it with SOL.",
+  },
+  {
+    icon: ArrowRightLeft,
+    title: "Open Pump.fun",
+    text: "Use the official link and confirm the mint address before any transaction.",
+  },
+  {
+    icon: LineChart,
+    title: "Swap for XNOVA",
+    text: "Review the details, confirm in your wallet, and keep a record of your transaction.",
+  },
+  {
+    icon: PartyPopper,
+    title: "Join the family",
+    text: "Join official channels, follow updates, and help strengthen the community.",
+  },
 ];
 
 const stats = [
@@ -72,16 +112,16 @@ function Home() {
         <div className="relative mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2">
           <div className="space-y-6">
             <span className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/10 px-4 py-1.5 text-xs font-semibold tracking-widest text-accent uppercase">
-              A meme token on Solana
+              Professional Solana community token
             </span>
             <h1 className="font-display text-5xl leading-[1.05] sm:text-6xl lg:text-7xl">
               <span className="text-gradient-nova">XNOVA</span>
               <br />
-              Cute. Chaotic. Unstoppable.
+              Built on Solana. Powered by community.
             </h1>
             <p className="max-w-lg text-lg text-muted-foreground">
-              Next generation, endless possibilities. XNOVA turns Solana speed into pure meme
-              energy — a token owned by its community, not by insiders.
+              Next generation, endless possibilities. XNOVA combines Solana speed with transparent
+              project information, official mint verification, and a community-first ecosystem.
             </p>
             <div className="flex flex-wrap gap-3">
               <Button asChild variant="hero" size="xl">
@@ -114,12 +154,18 @@ function Home() {
         <div className="animate-marquee flex w-max gap-8 font-display text-sm tracking-widest whitespace-nowrap text-muted-foreground uppercase">
           {Array.from({ length: 2 }).map((_, i) => (
             <span key={i} className="flex gap-8">
-              <span>Speed</span><span className="text-accent">◆</span>
-              <span>Utility</span><span className="text-primary">◆</span>
-              <span>Community</span><span className="text-accent">◆</span>
-              <span>Future</span><span className="text-primary">◆</span>
-              <span>Join the XNOVA family</span><span className="text-accent">◆</span>
-              <span>Not just a meme, it&apos;s a movement</span><span className="text-primary">◆</span>
+              <span>Speed</span>
+              <span className="text-accent">◆</span>
+              <span>Utility</span>
+              <span className="text-primary">◆</span>
+              <span>Community</span>
+              <span className="text-accent">◆</span>
+              <span>Future</span>
+              <span className="text-primary">◆</span>
+              <span>Join the XNOVA community</span>
+              <span className="text-accent">◆</span>
+              <span>Transparent project information</span>
+              <span className="text-primary">◆</span>
             </span>
           ))}
         </div>
@@ -130,7 +176,9 @@ function Home() {
         {stats.map((s) => (
           <div key={s.label} className="glass-card rounded-2xl p-5 text-center">
             <div className="font-display text-xl text-gradient-nova">{s.value}</div>
-            <div className="mt-1 text-xs tracking-widest text-muted-foreground uppercase">{s.label}</div>
+            <div className="mt-1 text-xs tracking-widest text-muted-foreground uppercase">
+              {s.label}
+            </div>
           </div>
         ))}
       </section>
@@ -138,14 +186,19 @@ function Home() {
       {/* Why */}
       <section className="mx-auto max-w-6xl px-4 py-16">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-display text-4xl">Why <span className="text-gradient-nova">XNOVA</span>?</h2>
+          <h2 className="font-display text-4xl">
+            Why <span className="text-gradient-nova">XNOVA</span>?
+          </h2>
           <p className="mt-3 text-muted-foreground">
             Everything you love about Solana, wrapped in the friendliest monster in the galaxy.
           </p>
         </div>
         <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {perks.map((p) => (
-            <div key={p.title} className="glass-card group rounded-3xl p-6 transition-transform hover:-translate-y-1">
+            <div
+              key={p.title}
+              className="glass-card group rounded-3xl p-6 transition-transform hover:-translate-y-1"
+            >
               <div className="mb-4 inline-flex rounded-2xl bg-primary/20 p-3 text-accent">
                 <p.icon className="h-6 w-6" />
               </div>
@@ -160,7 +213,9 @@ function Home() {
       <section className="mx-auto max-w-6xl px-4 py-16">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-display text-4xl">How to buy in 4 steps</h2>
-          <p className="mt-3 text-muted-foreground">Takes about two minutes. Seriously.</p>
+          <p className="mt-3 text-muted-foreground">
+            A simple overview for users who understand crypto risks.
+          </p>
         </div>
         <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           {steps.map((s, i) => (
@@ -191,8 +246,8 @@ function Home() {
           <div>
             <h2 className="font-display text-4xl">Tokenomics</h2>
             <p className="mt-3 text-muted-foreground">
-              Simple by design. No tax, no team allocation, no hidden unlocks — the supply belongs
-              to the market from minute one.
+              Simple by design. Published project details emphasize clear token information,
+              official mint verification, and transparent user guidance.
             </p>
             <div className="mt-6">
               <ContractBar />
@@ -230,8 +285,8 @@ function Home() {
             </div>
             <h2 className="font-display text-3xl">NOVA AI</h2>
             <p className="mt-3 flex-1 text-muted-foreground">
-              Our own AI system answers every XNOVA question instantly — how to buy, how to verify
-              the real contract, how to read the chart. Zero dumb questions, 24/7.
+              NOVA AI helps answer XNOVA questions clearly — how to verify the official mint, review
+              project information, navigate charts, and understand risk disclosures.
             </p>
             <Button asChild variant="hero" className="mt-6 w-fit">
               <Link to="/ai">Ask NOVA AI</Link>
