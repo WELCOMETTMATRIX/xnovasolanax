@@ -1,12 +1,19 @@
 import { Link } from "@tanstack/react-router";
 import { ContractBar } from "@/components/contract-bar";
 import { DEXSCREENER_URL, PUMP_FUN_URL, SOLSCAN_URL } from "@/lib/token";
+import {
+  DISCORD_URL,
+  GITBOOK_URL,
+  GITHUB_WEBSITE_URL,
+  TELEGRAM_URL,
+  TWITTER_URL,
+} from "@/lib/links";
 import mascot from "@/assets/mascot.png";
 
 export function SiteFooter() {
   return (
     <footer className="mt-24 border-t border-border/60 bg-card/40">
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 md:grid-cols-[1.3fr_1fr_1fr]">
+      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:grid-cols-2 md:grid-cols-[1.3fr_1fr_1fr_1fr]">
         <div className="space-y-4">
           <div className="flex items-center gap-3">
             <img
@@ -84,6 +91,54 @@ export function SiteFooter() {
               className="hover:text-foreground"
             >
               Solscan
+            </a>
+          </div>
+        </div>
+
+        <div className="space-y-3">
+          <h3 className="font-display text-sm tracking-widest text-foreground uppercase">
+            Community
+          </h3>
+          <div className="flex flex-col gap-2 text-sm text-muted-foreground">
+            <a
+              href={TELEGRAM_URL}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="hover:text-foreground"
+            >
+              Telegram
+            </a>
+            <a
+              href={TWITTER_URL}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="hover:text-foreground"
+            >
+              Twitter / X
+            </a>
+            <a
+              href={DISCORD_URL}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="hover:text-foreground"
+            >
+              Discord
+            </a>
+            <a
+              href={GITBOOK_URL}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="hover:text-foreground"
+            >
+              GitBook docs
+            </a>
+            <a
+              href={GITHUB_WEBSITE_URL}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="hover:text-foreground"
+            >
+              GitHub
             </a>
           </div>
         </div>
