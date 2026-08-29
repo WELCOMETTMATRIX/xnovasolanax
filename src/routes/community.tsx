@@ -4,6 +4,8 @@ import { MessagesSquare, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { supabase } from "@/integrations/supabase/client";
+import { SocialLinks } from "@/components/social-links";
+import { MemesGallery } from "@/components/memes-gallery";
 import { PUMP_FUN_URL } from "@/lib/token";
 
 export const Route = createFileRoute("/community")({
@@ -192,6 +194,9 @@ function CommunityPage() {
           </a>
         </Button>
       </div>
+
+      <SocialLinks />
+      <MemesGallery />
     </div>
   );
 }

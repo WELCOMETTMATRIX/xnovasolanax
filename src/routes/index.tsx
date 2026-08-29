@@ -17,6 +17,8 @@ import { Button } from "@/components/ui/button";
 import { ContractBar } from "@/components/contract-bar";
 import { MissionSection } from "@/components/mission";
 import { TrustedBrands } from "@/components/trusted-brands";
+import { EcosystemLinks } from "@/components/ecosystem-links";
+import { SocialLinks } from "@/components/social-links";
 import mascot from "@/assets/mascot.png";
 import { DEXSCREENER_URL, PUMP_FUN_URL } from "@/lib/token";
 
@@ -275,6 +277,8 @@ function Home() {
 
       <MissionSection />
       <TrustedBrands />
+      <EcosystemLinks />
+      <SocialLinks />
 
       {/* AI + community */}
       <section className="mx-auto max-w-6xl px-4 py-16">
