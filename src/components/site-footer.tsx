@@ -94,6 +94,54 @@ export function SiteFooter() {
             </a>
           </div>
         </div>
+
+        <div className="space-y-3">
+          <h3 className="font-display text-sm tracking-widest text-foreground uppercase">
+            Community
+          </h3>
+          <div className="flex flex-col gap-2 text-sm text-muted-foreground">
+            <a
+              href={TELEGRAM_URL}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="hover:text-foreground"
+            >
+              Telegram
+            </a>
+            <a
+              href={TWITTER_URL}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="hover:text-foreground"
+            >
+              Twitter / X
+            </a>
+            <a
+              href={DISCORD_URL}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="hover:text-foreground"
+            >
+              Discord
+            </a>
+            <a
+              href={GITBOOK_URL}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="hover:text-foreground"
+            >
+              GitBook docs
+            </a>
+            <a
+              href={GITHUB_WEBSITE_URL}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="hover:text-foreground"
+            >
+              GitHub
+            </a>
+          </div>
+        </div>
       </div>
 
       <div className="border-t border-border/60 px-4 py-6 text-center text-xs text-muted-foreground">
